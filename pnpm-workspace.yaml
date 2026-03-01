@@ -1,0 +1,10 @@
+packages:
+  - backend
+  - frontend
+  - shared
+
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - '@scarf/scarf'
+  - esbuild
+  - unrs-resolver
