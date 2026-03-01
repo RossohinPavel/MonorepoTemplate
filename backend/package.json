@@ -20,6 +20,7 @@
     "prepare": "ts-patch install"
   },
   "dependencies": {
+    "@fastify/cors": "^11.2.0",
     "@fastify/static": "^9.0.0",
     "@nestia/core": "^10.0.2",
     "@nestia/e2e": "^10.0.2",
