@@ -5,6 +5,7 @@ import './App.css'
 
 import * as api from "./api"
 
+import * as shared from "@project/shared";
 
 function App() {
   const [count, setCount] = useState(0)
