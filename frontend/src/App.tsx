@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import * as shared from "@project/shared";
+import * as api from "./api"
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [msg, setMsg] = useState("");
+
+  useEffect(() => {
+    const client = {host: "http://localhost:3000"};
+    api.functional.getHello(client).then(v => setMsg(v));
+  }, []);
 
   return (
     <>
@@ -28,7 +36,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        {shared.sayHello()}
+        {msg}
       </p>
     </>
   )

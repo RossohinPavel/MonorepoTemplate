@@ -26,6 +26,9 @@ importers:
 
   backend:
     dependencies:
+      '@fastify/cors':
+        specifier: ^11.2.0
+        version: 11.2.0
       '@fastify/static':
         specifier: ^9.0.0
         version: 9.0.0
@@ -117,6 +120,9 @@ importers:
 
   frontend:
     dependencies:
+      '@nestia/fetcher':
+        specifier: ^10.0.2
+        version: 10.0.2
       '@project/shared':
         specifier: workspace:*
         version: link:../shared
