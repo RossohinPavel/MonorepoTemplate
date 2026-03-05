@@ -1,10 +1,11 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { Logger } from '@nestjs/common';
-import { INestiaConfig, NestiaSwaggerComposer } from '@nestia/sdk';
-import { OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
-import cors from '@fastify/cors';
+import { AppModule } from "./app.module";
+import cors from "@fastify/cors";
+import { INestiaConfig, NestiaSwaggerComposer } from "@nestia/sdk";
+import { Logger } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import { OpenAPIObject, SwaggerModule } from "@nestjs/swagger";
+
 
 async function bootstrap() {
   // Fastify core
@@ -23,14 +24,14 @@ async function bootstrap() {
     info: {
       title: "Backend",
     },
-    servers: [{url: "http://localhost:3000", description: "Localhost"}]
-  }
+    servers: [{ url: "http://localhost:3000", description: "Localhost" }],
+  };
   const document = await NestiaSwaggerComposer.document(app, config);
   SwaggerModule.setup("docs", app, document as OpenAPIObject);
 
   // cors
-  app.register(cors);
+  await app.register(cors);
 
-  await app.listen(3000, '0.0.0.0');
+  await app.listen(3000, "0.0.0.0");
 }
 void bootstrap();

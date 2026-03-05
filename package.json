@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "pnpm -r lint",
+    "lint:frontend": "pnpm --filter frontend lint",
+    "lint:backend": "pnpm --filter backend lint",
+    "lint:shared": "pnpm --filter shared lint"
   },
   "keywords": [],
   "author": "dfx_17",
@@ -11,8 +15,13 @@
   "packageManager": "pnpm@10.30.3",
   "devDependencies": {
     "@eslint/js": "^9.39.3",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@types/node": "^25.3.3",
     "eslint": "^9.39.3",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "globals": "^17.4.0",
     "typescript-eslint": "^8.56.1"
   }

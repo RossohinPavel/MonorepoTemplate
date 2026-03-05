@@ -5,7 +5,7 @@ import { FastifyAdapter } from "@nestjs/platform-fastify";
 
 const config: INestiaConfig = {
     input: () => NestFactory.create(AppModule, new FastifyAdapter()),
-    output: "../frontend/src/api",
+    output: "../frontend/api",
     primitive: true,
 };
 

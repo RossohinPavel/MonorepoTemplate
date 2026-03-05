@@ -1,1 +1,1 @@
-export const sayHello = () => 'Hello from Shared!';
+export const sayHello = () => "Hello from Shared!";
