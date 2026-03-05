@@ -1,20 +1,18 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import * as api from "../api";
 
-import * as api from "./api"
-
-import * as shared from "@project/shared";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    const client = {host: "http://localhost:3000"};
-    api.functional.getHello(client).then(v => setMsg(v));
+    const client = { host: "http://localhost:3000" };
+    void api.functional.getHello(client).then(v => setMsg(v as string));
   }, []);
 
   return (
@@ -40,7 +38,7 @@ function App() {
         {msg}
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
