@@ -13,7 +13,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nestia/fetcher": "^10.0.2",
     "@project/shared": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
