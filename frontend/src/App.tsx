@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import * as api from "../api";
 
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const [msg, setMsg] = useState("");
+  const [msg] = useState("");
 
-  useEffect(() => {
-    const client = { host: "http://localhost:3000" };
-    void api.functional.getHello(client).then(v => setMsg(v as string));
-  }, []);
+  // useEffect(() => {
+  //   const client = { host: "http://localhost:3000" };
+  //   void api.functional.getHello(client).then(v => setMsg(v as string));
+  // }, []);
 
   return (
     <>
