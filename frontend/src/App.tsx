@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import api from "@project/shared/api";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import api from "@project/shared/api"
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const client = { host: "http://localhost:3000" };
-    void api.functional.ping.getPing(client).then(v => setMsg(v as string));
+    void api.functional.ping.getPing(client).then(v => setMsg(v));
   }, []);
 
   return (
