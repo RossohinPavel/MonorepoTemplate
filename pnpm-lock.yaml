@@ -138,9 +138,6 @@ importers:
 
   frontend:
     dependencies:
-      '@nestia/fetcher':
-        specifier: ^10.0.2
-        version: 10.0.2
       '@project/shared':
         specifier: workspace:*
         version: link:../shared
@@ -176,7 +173,14 @@ importers:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@25.5.0)(terser@5.46.0)
 
-  shared: {}
+  shared:
+    devDependencies:
+      '@nestia/fetcher':
+        specifier: ^10.0.2
+        version: 10.0.2
+      typia:
+        specifier: ^11.0.3
+        version: 11.0.3(@types/node@25.5.0)(typescript@5.9.3)
 
 packages:
 
